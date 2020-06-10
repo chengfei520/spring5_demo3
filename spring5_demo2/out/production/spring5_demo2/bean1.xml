@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="stu" class="com.atguigu.spring5.collectiontype.Stu">
+        <property name="courses">
+            <array>
+                <value>java</value>
+                <value>数据库</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>张三</value>
+                <value>小三</value>
+            </list>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="JAVA" value="java"></entry>
+                <entry key="PHP" value="php"></entry>
+            </map>
+        </property>
+        <property name="set">
+            <set>
+                <value>myspl</value>
+                <value>redis</value>
+            </set>
+        </property>
+        <property name="courseList">
+            <list>
+               <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+    </bean>
+    <!--创建多个course对象-->
+    <bean id="course1" class="com.atguigu.spring5.collectiontype.Course">
+        <property name="cname" value="Spring5框架"></property>
+    </bean>
+    <bean id="course2" class="com.atguigu.spring5.collectiontype.Course">
+        <property name="cname" value="Mybatis框架"></property>
+    </bean>
+</beans>
